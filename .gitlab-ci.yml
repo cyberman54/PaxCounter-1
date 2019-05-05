@@ -1,0 +1,11 @@
+image: python:2.7
+
+
+build:
+  before_script:
+    - pip install -U platformio==3.6.6
+    - cp src/loraconf.sample.h src/loraconf.h
+    - cp src/ota.sample.conf src/ota.conf
+  script:
+    - platformio run -e ebox -e eboxtube -e ecopower -e heltec -e heltecv2 -e ttgov1 -e ttgov2 -e ttgov21old -e ttgov21new -e ttgofox -e ttgobeam -e fipy -e lopy -e lopy4 -e lolin32litelora -e lolin32lora -e lolin32lite -e octopus32 -e generic
+
