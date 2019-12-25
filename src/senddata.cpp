@@ -50,6 +50,9 @@ void SendPayload(uint8_t port, sendprio_t prio) {
 #ifdef HAS_SPI
   spi_enqueuedata(&SendBuffer);
 #endif
+#ifdef HAS_SDCARD
+   sdcardWriteData( macs_wifi, macs_ble);
+#endif
 
 } // SendPayload
 
