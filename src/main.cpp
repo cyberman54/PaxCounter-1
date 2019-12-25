@@ -463,6 +463,11 @@ void setup() {
 
 #endif // TIME_SYNC_INTERVAL
 
+#if (HAS_SDCARD)
+  if ( sdcardInit() )
+      strcat_P(features, " SD");
+#endif
+
   // show compiled features
   ESP_LOGI(TAG, "Features:%s", features);
 
